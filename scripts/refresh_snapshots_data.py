@@ -66,7 +66,7 @@ def generate_recent_data():
             "snapshots": files
         }
         
-        # Write the data to snapshot_data.json
+        # Write the data to snapshots_data.json
         with open('snapshots_data.json', 'w') as f:
             json.dump(data, f, indent=2)
     except Exception as e:
