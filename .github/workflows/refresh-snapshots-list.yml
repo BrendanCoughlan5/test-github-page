@@ -1,0 +1,31 @@
+name: Update Test GitHub Page
+
+on:
+  schedule:
+    - cron: "*/10 * * * *" # Every 10 minutes
+
+jobs:
+  update-page:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Update README timestamp
+      run: |
+        echo "# [Visit Network Snapshots Page](https://brendancoughlan5.github.io/test-github-page/)" > README.md
+        echo "" >> README.md
+        echo "This is a test repo :)" >> README.md
+        echo "" >> README.md
+        echo "last updated at: $(date -u)" >> README.md
+
+    - name: Commit and push updates
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        git commit -m "Update README timestamp [skip ci]" || echo "No changes to commit"
+        git push origin main
