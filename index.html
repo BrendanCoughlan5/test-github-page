@@ -1,137 +1,268 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Network snapshot management interface">
     <title>Network Snapshots</title>
     <style>
+        :root {
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --border-color: #374151;
+            --hover-bg: #262f3f;
+            --button-bg: #374151;
+            --button-hover: #4b5563;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
-            background: #111827;
-            color: #e5e7eb;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .title-section {
+            flex: 1;
         }
 
         h1 {
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 24px;
-            color: #e5e7eb;
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .meta-info {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
         }
 
         .container {
-            background: #1f2937;
-            border-radius: 12px;
+            background: var(--bg-secondary);
+            border-radius: 0.75rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .error-message {
+            padding: 1rem;
+            background: #dc2626;
+            color: white;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            display: none;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 14px;
+            font-size: 0.875rem;
         }
 
         th {
-            background: #111827;
-            padding: 16px;
+            background: var(--bg-primary);
+            padding: 1rem;
             text-align: left;
             font-weight: 500;
-            color: #9ca3af;
-            border-bottom: 1px solid #374151;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
             cursor: pointer;
             user-select: none;
+            position: relative;
         }
 
         th:hover {
-            color: #fff;
+            color: var(--text-primary);
         }
 
-        th::after {
-            content: '↕️';
-            opacity: 0.3;
-            margin-left: 4px;
-            font-size: 12px;
+        th[aria-sort] {
+            padding-right: 2rem;
         }
 
-        th.sorted-asc::after {
-            content: '↓';
+        th[aria-sort]::after {
+            content: '';
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0.75rem;
+            height: 0.75rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239ca3af'%3E%3Cpath d='M8 10l4-4 4 4M8 14l4 4 4-4'/%3E%3C/svg%3E");
+            background-size: contain;
+            opacity: 0.5;
+        }
+
+        th[aria-sort="ascending"]::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e5e7eb'%3E%3Cpath d='M8 14l4 4 4-4'/%3E%3C/svg%3E");
             opacity: 1;
         }
 
-        th.sorted-desc::after {
-            content: '↑';
+        th[aria-sort="descending"]::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e5e7eb'%3E%3Cpath d='M8 10l4-4 4 4'/%3E%3C/svg%3E");
             opacity: 1;
         }
 
         td {
-            padding: 16px;
-            border-bottom: 1px solid #374151;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
         }
 
         tr:hover {
-            background: #262f3f;
+            background: var(--hover-bg);
         }
 
         .network-cell {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 0.5rem;
             font-weight: 500;
         }
 
         .timestamp-cell {
-            color: #9ca3af;
-            font-family: mono;
+            color: var(--text-secondary);
+            font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
         }
 
         .version-cell, .size-cell {
-            color: #9ca3af;
+            color: var(--text-secondary);
         }
 
-        .download-link {
-            color: #e5e7eb;
+        .download-button {
+            color: var(--text-primary);
             text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            background: #374151;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            background: var(--button-bg);
+            border: none;
+            cursor: pointer;
+            font-size: 0.875rem;
             transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .download-link:hover {
-            background: #4b5563;
+        .download-button:hover {
+            background: var(--button-hover);
+        }
+
+        .download-button:focus {
+            outline: 2px solid var(--text-primary);
+            outline-offset: 2px;
         }
 
         .badge {
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
             font-weight: 500;
-            background: #374151;
-            color: #e5e7eb;
+            background: var(--button-bg);
+            color: var(--text-primary);
         }
 
         .meta-info {
-            margin-bottom: 20px;
-            font-size: 14px;
-            color: #9ca3af;
+            margin-bottom: 1.25rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+                margin: 0;
+            }
+
+            .container {
+                border-radius: 0;
+            }
+
+            td, th {
+                padding: 0.75rem;
+            }
+
+            .size-cell {
+                display: none;
+            }
+
+            th:nth-child(4),
+            td:nth-child(4) {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Files</h1>
-    <div class="meta-info" id="meta-info">
-        <!-- Meta information will be populated here -->
+    <div class="header">
+        <div class="title-section">
+            <h1>Sidecar Snapshots</h1>
+            <p class="subtitle">Quickly start your sync from a recent block with a snapshot</p>
+        </div>
+        <div class="meta-info" id="meta-info" aria-live="polite"></div>
     </div>
-    <div class="container">
-        <table>
+    <div class="error-message" id="error-message" role="alert"></div>
+    <div class="container" style="position: relative;">
+        <div id="loading" class="loading-overlay">Loading snapshots...</div>
+        <table role="grid">
             <thead>
                 <tr>
-                    <th onclick="sortTable('network')">Network</th>
-                    <th onclick="sortTable('timestamp')">Timestamp</th>
-                    <th onclick="sortTable('version')">Version</th>
-                    <th onclick="sortTable('size')">Size</th>
-                    <th>Action</th>
+                    <th scope="col" role="columnheader" aria-sort="none" onclick="handleSort('network')">Network</th>
+                    <th scope="col" role="columnheader" aria-sort="descending" onclick="handleSort('timestamp')">Timestamp</th>
+                    <th scope="col" role="columnheader" aria-sort="none" onclick="handleSort('version')">Version</th>
+                    <th scope="col" role="columnheader" aria-sort="none" onclick="handleSort('size')">Size</th>
+                    <th scope="col" role="columnheader">Action</th>
                 </tr>
             </thead>
             <tbody id="files"></tbody>
@@ -139,102 +270,156 @@
     </div>
 
     <script>
-        let currentSort = {
-            column: 'timestamp',
-            direction: 'desc'
-        };
-
-        fetch('snapshot_data.json')
-            .then(response => response.json())
-            .then(data => {
-                const metaInfo = document.getElementById('meta-info');
-                const lastRefreshed = new Date(data.meta.lastRefreshed).toLocaleString();
-                metaInfo.innerHTML = `Last refreshed: ${lastRefreshed}. Snapshots expire after 30 days.`;
-
-                renderTable(data.snapshots);
-                sortTable(currentSort.column); // Initial sort
-            })
-            .catch(error => console.error('Error fetching data:', error));
-
-        function sortTable(column) {
-            const headers = document.querySelectorAll('th');
-            headers.forEach(header => {
-                header.classList.remove('sorted-asc', 'sorted-desc');
-            });
-
-            if (currentSort.column === column) {
-                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
-            } else {
-                currentSort.column = column;
-                currentSort.direction = 'desc';
+        class SnapshotManager {
+            constructor() {
+                this.currentSort = {
+                    column: 'timestamp',
+                    direction: 'desc'
+                };
+                this.data = null;
+                this.init();
             }
 
-            const header = document.querySelector(`th:nth-child(${getColumnIndex(column) + 1})`);
-            header.classList.add(`sorted-${currentSort.direction}`);
+            async init() {
+                try {
+                    await this.fetchData();
+                    this.setupEventListeners();
+                } catch (error) {
+                    this.handleError(error);
+                }
+            }
 
-            fetch('snapshot_data.json')
-                .then(response => response.json())
-                .then(data => {
-                    let sortedFiles = [...data.snapshots].sort((a, b) => {
-                        let valueA, valueB;
+            async fetchData() {
+                try {
+                    const response = await fetch('snapshot_data.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    this.data = await response.json();
+                    this.updateMetaInfo();
+                    this.renderTable();
+                } catch (error) {
+                    throw new Error('Failed to fetch snapshot data. Please try again later.');
+                } finally {
+                    document.getElementById('loading').style.display = 'none';
+                }
+            }
 
-                        if (column === 'size') {
-                            valueA = parseSize(a.size);
-                            valueB = parseSize(b.size);
-                        } else {
-                            valueA = a[column];
-                            valueB = b[column];
-                        }
+            updateMetaInfo() {
+                const metaInfo = document.getElementById('meta-info');
+                const date = new Date(this.data.meta.lastRefreshed);
+                const utcString = date.toUTCString();
+                metaInfo.innerHTML = `Refreshed last: ${utcString}`;
+            }
 
-                        if (column === 'timestamp') {
-                            valueA = new Date(valueA);
-                            valueB = new Date(valueB);
-                        }
+            handleError(error) {
+                const errorElement = document.getElementById('error-message');
+                errorElement.textContent = error.message;
+                errorElement.style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+            }
 
-                        if (valueA < valueB) return currentSort.direction === 'asc' ? -1 : 1;
-                        if (valueA > valueB) return currentSort.direction === 'asc' ? 1 : -1;
-                        return 0;
-                    });
+            setupEventListeners() {
+                window.handleSort = (column) => this.handleSort(column);
+                window.handleDownload = (network, version) => this.handleDownload(network, version);
+            }
 
-                    renderTable(sortedFiles);
+            handleSort(column) {
+                const headers = document.querySelectorAll('th[aria-sort]');
+                headers.forEach(header => {
+                    if (header.textContent.toLowerCase().includes(column)) {
+                        const currentSort = header.getAttribute('aria-sort');
+                        const newSort = currentSort === 'ascending' ? 'descending' : 'ascending';
+                        header.setAttribute('aria-sort', newSort);
+                        this.currentSort.direction = newSort === 'ascending' ? 'asc' : 'desc';
+                    } else {
+                        header.setAttribute('aria-sort', 'none');
+                    }
                 });
-        }
 
-        function getColumnIndex(column) {
-            const columns = ['network', 'timestamp', 'version', 'size', 'action'];
-            return columns.indexOf(column);
-        }
+                this.currentSort.column = column;
+                this.renderTable();
+            }
 
-        function parseSize(size) {
-            const [value, unit] = size.split(' ');
-            const sizeInBytes = parseFloat(value) * (unit === 'GB' ? 1024 : 1);
-            return sizeInBytes;
-        }
+            handleDownload(network, version) {
+                // Implement actual download logic here
+                console.log(`Downloading ${network} version ${version}`);
+            }
 
-        function renderTable(files) {
-            const fileList = document.getElementById('files');
-            fileList.innerHTML = '';
-            
-            files.forEach(file => {
-                fileList.innerHTML += `
+            parseSize(size) {
+                const [value, unit] = size.split(' ');
+                return parseFloat(value) * (unit === 'GB' ? 1024 : 1);
+            }
+
+            formatDate(timestamp) {
+                const date = new Date(timestamp);
+                return new Intl.DateTimeFormat('default', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }).format(date);
+            }
+
+            sortData() {
+                return [...this.data.snapshots].sort((a, b) => {
+                    let valueA, valueB;
+
+                    switch (this.currentSort.column) {
+                        case 'size':
+                            valueA = this.parseSize(a.size);
+                            valueB = this.parseSize(b.size);
+                            break;
+                        case 'timestamp':
+                            valueA = new Date(a.timestamp);
+                            valueB = new Date(b.timestamp);
+                            break;
+                        default:
+                            valueA = a[this.currentSort.column];
+                            valueB = b[this.currentSort.column];
+                    }
+
+                    const sortOrder = this.currentSort.direction === 'asc' ? 1 : -1;
+                    return valueA < valueB ? -sortOrder : valueA > valueB ? sortOrder : 0;
+                });
+            }
+
+            renderTable() {
+                if (!this.data) return;
+
+                const fileList = document.getElementById('files');
+                const sortedFiles = this.sortData();
+                
+                fileList.innerHTML = sortedFiles.map(file => `
                     <tr>
                         <td>
                             <div class="network-cell">
                                 <span class="badge">${file.network}</span>
                             </div>
                         </td>
-                        <td class="timestamp-cell">${file.timestamp}</td>
+                        <td class="timestamp-cell">${this.formatDate(file.timestamp)}</td>
                         <td class="version-cell">${file.version}</td>
                         <td class="size-cell">${file.size}</td>
                         <td>
-                            <a href="#" class="download-link" onclick="alert('Downloading ${file.network} ${file.version}')">
+                            <button 
+                                onclick="handleDownload('${file.network}', '${file.version}')"
+                                class="download-button"
+                                aria-label="Download ${file.network} version ${file.version}"
+                            >
                                 Download
-                            </a>
+                            </button>
                         </td>
                     </tr>
-                `;
-            });
+                `).join('');
+            }
         }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            new SnapshotManager();
+        });
     </script>
 </body>
 </html>
