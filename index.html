@@ -123,7 +123,7 @@
             background: #334155;
         }
 
-        .network-cell {
+        .network-cell, .environment-cell {
             display: flex;
             align-items: center;
             gap: 12px;
@@ -179,6 +179,13 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        .no-data {
+            text-align: center;
+            padding: 20px;
+            color: #f8fafc;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -198,41 +205,60 @@
             <thead>
                 <tr>
                     <th onclick="sortTable('network')">Network</th>
-                    <th onclick="sortTable('timestamp')">Timestamp (UTC)</th>
-                    <th onclick="sortTable('version')">Version</th>
+                    <th onclick="sortTable('environment')">Environment</th>
+                    <th onclick="sortTable('date')">TIMESTAMP (UTC)</th>
+                    <th onclick="sortTable('sidecar_version')">Sidecar Version</th>
                     <th onclick="sortTable('size')">Size</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody id="files"></tbody>
         </table>
+        <div id="no-data" class="no-data" style="display: none;">No data available</div>
     </div>
 
     <script>
         let currentSort = {
-            column: 'version',
+            column: 'date',
             direction: 'desc'
         };
 
-        fetch('snapshot_data.json')
-            .then(response => response.json())
+        fetch('snapshots_data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 const refreshInfo = document.getElementById('refresh-info');
-                const lastRefreshed = new Date(data.meta.lastRefreshed).toLocaleString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric',
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    hour12: false,
-                    timeZone: 'UTC'
-                });
-                refreshInfo.innerHTML = `Last Refreshed: ${lastRefreshed} (UTC)`;
+                const lastRefreshed = new Date(data.meta.lastRefreshed);
+                if (isNaN(lastRefreshed.getTime())) {
+                    refreshInfo.innerHTML = `Last Refreshed: No data`;
+                } else {
+                    refreshInfo.innerHTML = `Last Refreshed: ${lastRefreshed.toLocaleString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        hour12: false,
+                        timeZone: 'UTC'
+                    })} (UTC)`;
+                }
 
-                renderTable(data.snapshots);
-                sortTable(currentSort.column); // Initial sort
+                if (data.snapshots && data.snapshots.length > 0) {
+                    renderTable(data.snapshots);
+                    sortTable(currentSort.column); // Initial sort
+                } else {
+                    document.getElementById('no-data').style.display = 'block';
+                }
             })
-            .catch(error => console.error('Error fetching data:', error));
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                document.getElementById('refresh-info').innerHTML = `Last Refreshed: No data`;
+                document.getElementById('no-data').style.display = 'block';
+            });
 
         function sortTable(column) {
             const headers = document.querySelectorAll('th');
@@ -250,21 +276,26 @@
             const header = document.querySelector(`th:nth-child(${getColumnIndex(column) + 1})`);
             header.classList.add(`sorted-${currentSort.direction}`);
 
-            fetch('snapshot_data.json')
-                .then(response => response.json())
+            fetch('snapshots_data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     let sortedFiles = [...data.snapshots].sort((a, b) => {
                         let valueA, valueB;
 
                         if (column === 'size') {
-                            valueA = parseSize(a.size);
-                            valueB = parseSize(b.size);
+                            valueA = a.size;
+                            valueB = b.size;
                         } else {
                             valueA = a[column];
                             valueB = b[column];
                         }
 
-                        if (column === 'timestamp') {
+                        if (column === 'date') {
                             valueA = new Date(valueA);
                             valueB = new Date(valueB);
                         }
@@ -275,18 +306,17 @@
                     });
 
                     renderTable(sortedFiles);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    document.getElementById('refresh-info').innerHTML = `Last Refreshed: No data`;
+                    document.getElementById('no-data').style.display = 'block';
                 });
         }
 
         function getColumnIndex(column) {
-            const columns = ['network', 'timestamp', 'version', 'size', 'action'];
+            const columns = ['network', 'environment', 'date', 'sidecar_version', 'size', 'action'];
             return columns.indexOf(column);
-        }
-
-        function parseSize(size) {
-            const [value, unit] = size.split(' ');
-            const sizeInBytes = parseFloat(value) * (unit === 'GB' ? 1024 : 1);
-            return sizeInBytes;
         }
 
         function renderTable(files) {
@@ -294,7 +324,8 @@
             fileList.innerHTML = '';
             
             files.forEach(file => {
-                const formattedTimestamp = formatTimestamp(file.timestamp);
+                const formattedDate = formatDate(file.date);
+                const formattedSize = formatSize(file.size);
                 fileList.innerHTML += `
                     <tr>
                         <td>
@@ -302,15 +333,20 @@
                                 <span class="badge">${file.network}</span>
                             </div>
                         </td>
-                        <td class="timestamp-cell">
-                            <div class="timestamp-wrapper">
-                                ${formattedTimestamp}
+                        <td>
+                            <div class="environment-cell">
+                                <span class="badge">${file.environment}</span>
                             </div>
                         </td>
-                        <td class="version-cell">${file.version}</td>
-                        <td class="size-cell">${file.size}</td>
+                        <td class="timestamp-cell">
+                            <div class="timestamp-wrapper">
+                                ${formattedDate}
+                            </div>
+                        </td>
+                        <td class="version-cell">${file.sidecar_version}</td>
+                        <td class="size-cell">${formattedSize}</td>
                         <td>
-                            <a href="#" class="download-link" onclick="alert('Downloading ${file.network} ${file.version}')">
+                            <a href="${file.download_link}" class="download-link">
                                 Download
                             </a>
                         </td>
@@ -319,17 +355,20 @@
             });
         }
 
-        function formatTimestamp(timestamp) {
-            const date = new Date(timestamp);
-            return date.toLocaleString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: false,
-                timeZone: 'UTC'
-            });
+        function formatDate(dateString) {
+            const year = dateString.substring(0, 4);
+            const month = dateString.substring(4, 6);
+            const day = dateString.substring(6, 8);
+            const hour = dateString.substring(9, 11);
+            const minute = dateString.substring(11, 13);
+            return `${year}-${month}-${day} ${hour}:${minute} UTC`;
+        }
+
+        function formatSize(bytes) {
+            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+            if (bytes === 0) return '0 Byte';
+            const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+            return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
         }
     </script>
 
