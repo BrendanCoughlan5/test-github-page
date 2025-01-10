@@ -1,0 +1,21 @@
+{
+    "meta": {
+        "lastRefreshed": "2025-01-10T12:00:00Z"
+    },
+    "snapshots": [
+        {
+            "network": "Mainnet",
+            "timestamp": "2025-01-09 14:30:25",
+            "version": "v1.0.2",
+            "size": "3.8 GB",
+            "type": "mainnet"
+        },
+        {
+            "network": "Holesky",
+            "timestamp": "2025-01-09 12:15:10",
+            "version": "v1.0.2",
+            "size": "925 MB",
+            "type": "testnet"
+        }
+    ]
+} 

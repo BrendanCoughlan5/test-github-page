@@ -1,32 +1,50 @@
-name: Update Test GitHub Page
+name: Refresh Snapshots List
 
 on:
   schedule:
-    - cron: "*/10 * * * *" # Every 10 minutes
-  workflow_dispatch: # Allows manual triggering
+    - cron: '*/10 * * * *' # Runs every 10 minutes
+  workflow_dispatch:
 
 jobs:
-  update-page:
+  refresh_snapshots:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
-    - name: Update README timestamp
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Refresh README
       run: |
         echo "# [Visit Network Snapshots Page](https://brendancoughlan5.github.io/test-github-page/)" > README.md
         echo "" >> README.md
         echo "This is a test repo :)" >> README.md
         echo "" >> README.md
-        echo "last updated at: $(date -u)" >> README.md
+        echo "last refreshed at: $(date -u)" >> README.md
 
-    - name: Commit and push updates
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Refresh snapshot_data.json
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add README.md
-        git commit -m "Update README timestamp [skip ci]" || echo "No changes to commit"
-        git push origin main
+        echo "Refreshing snapshot_data.json with the current timestamp..."
+        node -e "
+        const fs = require('fs');
+        const path = './snapshot_data.json';
+        const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+        data.meta.lastRefreshed = new Date().toISOString();
+        fs.writeFileSync(path, JSON.stringify(data, null, 2));
+        "
+
+    - name: Commit changes
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add README.md snapshot_data.json
+        git commit -m "Refresh README and snapshot_data.json with the latest refresh time"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
