@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastRefreshed": "2025-01-10T11:09:00.154446+00:00",
+    "lastRefreshed": "2025-01-10T11:16:32.992039+00:00",
     "baseUrl": "https://files.bcog55.org"
   },
   "snapshots": [
@@ -13,16 +13,6 @@
       "date": "20250104T175654",
       "size": 3072,
       "download_link": "https://files.bcog55.org/snapshots/mainnet/ethereum/snapshot-v1.0.0-20250104T175654.dump"
-    },
-    {
-      "name": "snapshots/mainnet/ethereum/snapshot-v1.0.1-20250109T045002.dump",
-      "path": "/snapshots/mainnet/ethereum/snapshot-v1.0.1-20250109T045002.dump",
-      "environment": "mainnet",
-      "network": "ethereum",
-      "sidecar_version": "v1.0.1",
-      "date": "20250109T045002",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/mainnet/ethereum/snapshot-v1.0.1-20250109T045002.dump"
     },
     {
       "name": "snapshots/preprod/holesky/snapshot-v1.0.0-20250104T093748.dump",
