@@ -32,7 +32,11 @@ jobs:
         node -e "
         const fs = require('fs');
         const path = './snapshot_data.json';
-        const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+        let data = {};
+        if (fs.existsSync(path)) {
+          data = JSON.parse(fs.readFileSync(path, 'utf8'));
+        }
+        data.meta = data.meta || {};
         data.meta.lastRefreshed = new Date().toISOString();
         fs.writeFileSync(path, JSON.stringify(data, null, 2));
         "
@@ -48,9 +52,8 @@ jobs:
       run: |
         # Ensure the remote branch is up-to-date
         git fetch origin master
-        git rebase origin/master || git rebase --abort
-        
-        # Force push the changes to avoid conflicts
-        git push origin master --force
+        git pull origin master --rebase || git rebase --abort
+        git push origin master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
