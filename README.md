@@ -1,17 +1,18 @@
-# TESTING Snapshot Fetcher 📸
+# 🚧 TESTING: Snapshot Fetcher 📸
 
 Welcome to **Snapshot Fetcher**! This repository updates automatically every 10 minutes to fetch all snapshots from the R2 bucket and display them on the website linked below. 🚀
+
+---
+
+## 🌐 **[View Snapshots Here](https://brendancoughlan5.github.io/test-github-page/)**
+
+---
 
 ## 📄 Features
 
 - Regular updates (every 10 minutes) to ensure the latest snapshots are available.
 - Seamless integration with the R2 bucket for fetching snapshots.
 - A user-friendly interface to view the snapshots on the website.
-
-## 🌐 View Snapshots
-
-Check out the snapshots on the **Snapshot Viewer Page**:  
-👉 [Visit Snapshot Viewer Page](https://brendancoughlan5.github.io/test-github-page/)
 
 ## 💡 How It Works
 
