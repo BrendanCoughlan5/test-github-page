@@ -13,22 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
-    - name: Refresh README
-      run: |
-        echo "# [Visit Network Snapshots Page](https://brendancoughlan5.github.io/test-github-page/)" > README.md
-        echo "" >> README.md
-        echo "This is a test repo :)" >> README.md
-        echo "" >> README.md
-        echo "last refreshed at: $(date -u)" >> README.md
-
     - name: Refresh snapshot_data.json
       run: |
-        echo "Refreshing snapshot_data.json with the current timestamp..."
+        echo "Updating lastRefreshed in snapshot_data.json with the current UTC timestamp..."
         node -e "
         const fs = require('fs');
         const path = './snapshot_data.json';
@@ -41,19 +28,13 @@ jobs:
         fs.writeFileSync(path, JSON.stringify(data, null, 2));
         "
 
-    - name: Commit changes
+    - name: Commit and Push changes
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git add README.md snapshot_data.json
-        git commit -m "Refresh README and snapshot_data.json with the latest refresh time" || echo "No changes to commit"
-
-    - name: Push changes
-      run: |
-        # Ensure the remote branch is up-to-date
-        git fetch origin master
-        git pull origin master --rebase || git rebase --abort
-        git push origin master
+        git add snapshot_data.json
+        git commit -m "Update lastRefreshed in snapshot_data.json"
+        git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
