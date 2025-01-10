@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Snapshots</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #111827;
+            color: #e5e7eb;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            color: #e5e7eb;
+        }
+
+        .container {
+            background: #1f2937;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            background: #111827;
+            padding: 16px;
+            text-align: left;
+            font-weight: 500;
+            color: #9ca3af;
+            border-bottom: 1px solid #374151;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th:hover {
+            color: #fff;
+        }
+
+        th::after {
+            content: '↕️';
+            opacity: 0.3;
+            margin-left: 4px;
+            font-size: 12px;
+        }
+
+        th.sorted-asc::after {
+            content: '↓';
+            opacity: 1;
+        }
+
+        th.sorted-desc::after {
+            content: '↑';
+            opacity: 1;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #374151;
+        }
+
+        tr:hover {
+            background: #262f3f;
+        }
+
+        .network-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .timestamp-cell {
+            color: #9ca3af;
+            font-family: mono;
+        }
+
+        .version-cell, .size-cell {
+            color: #9ca3af;
+        }
+
+        .download-link {
+            color: #e5e7eb;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            background: #374151;
+            transition: all 0.2s ease;
+        }
+
+        .download-link:hover {
+            background: #4b5563;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            background: #374151;
+            color: #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Files</h1>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th onclick="sortTable('network')">Network</th>
+                    <th onclick="sortTable('timestamp')">Timestamp</th>
+                    <th onclick="sortTable('version')">Version</th>
+                    <th onclick="sortTable('size')">Size</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="files"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const files = [
+            { 
+                network: "Mainnet", 
+                timestamp: "2025-01-09 14:30:25", 
+                version: "v1.0.2",
+                size: "3.8 GB",
+                sizeInBytes: 3800,
+                type: "mainnet"
+            },
+            { 
+                network: "Holesky", 
+                timestamp: "2025-01-09 12:15:10", 
+                version: "v1.0.2",
+                size: "925 MB",
+                sizeInBytes: 925,
+                type: "testnet"
+            },
+            { 
+                network: "Mainnet", 
+                timestamp: "2025-01-08 23:45:30", 
+                version: "v1.0.1",
+                size: "3.2 GB",
+                sizeInBytes: 3200,
+                type: "mainnet"
+            },
+            { 
+                network: "Holesky", 
+                timestamp: "2025-01-08 18:20:15", 
+                version: "v1.0.1",
+                size: "884 MB",
+                sizeInBytes: 884,
+                type: "testnet"
+            },
+            { 
+                network: "Mainnet", 
+                timestamp: "2025-01-08 15:10:45", 
+                version: "v1.0.1",
+                size: "2.9 GB",
+                sizeInBytes: 2900,
+                type: "mainnet"
+            }
+        ];
+
+        let currentSort = {
+            column: 'timestamp',
+            direction: 'desc'
+        };
+
+        function sortTable(column) {
+            const headers = document.querySelectorAll('th');
+            headers.forEach(header => {
+                header.classList.remove('sorted-asc', 'sorted-desc');
+            });
+
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'desc';
+            }
+
+            const header = document.querySelector(`th:nth-child(${getColumnIndex(column) + 1})`);
+            header.classList.add(`sorted-${currentSort.direction}`);
+
+            let sortedFiles = [...files].sort((a, b) => {
+                let valueA, valueB;
+
+                if (column === 'size') {
+                    valueA = a.sizeInBytes;
+                    valueB = b.sizeInBytes;
+                } else {
+                    valueA = a[column];
+                    valueB = b[column];
+                }
+
+                if (column === 'timestamp') {
+                    valueA = new Date(valueA);
+                    valueB = new Date(valueB);
+                }
+
+                if (valueA < valueB) return currentSort.direction === 'asc' ? -1 : 1;
+                if (valueA > valueB) return currentSort.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            renderTable(sortedFiles);
+        }
+
+        function getColumnIndex(column) {
+            const columns = ['network', 'timestamp', 'version', 'size', 'action'];
+            return columns.indexOf(column);
+        }
+
+        function renderTable(files) {
+            const fileList = document.getElementById('files');
+            fileList.innerHTML = '';
+            
+            files.forEach(file => {
+                fileList.innerHTML += `
+                    <tr>
+                        <td>
+                            <div class="network-cell">
+                                <span class="badge">${file.network}</span>
+                            </div>
+                        </td>
+                        <td class="timestamp-cell">${file.timestamp}</td>
+                        <td class="version-cell">${file.version}</td>
+                        <td class="size-cell">${file.size}</td>
+                        <td>
+                            <a href="#" class="download-link" onclick="alert('Downloading ${file.network} ${file.version}')">
+                                Download
+                            </a>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Initial sort by timestamp
+        sortTable('timestamp');
+    </script>
+</body>
+</html>
