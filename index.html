@@ -1,268 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Network snapshot management interface">
-    <title>Network Snapshots</title>
+    <title>Sidecar Snapshots</title>
     <style>
-        :root {
-            --bg-primary: #111827;
-            --bg-secondary: #1f2937;
-            --text-primary: #e5e7eb;
-            --text-secondary: #9ca3af;
-            --border-color: #374151;
-            --hover-bg: #262f3f;
-            --button-bg: #374151;
-            --button-hover: #4b5563;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            background: #0f172a;
+            color: #f8fafc;
             line-height: 1.5;
+            font-size: 20px;
+            transition: background 0.3s, color 0.3s;
         }
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        .header {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
+            margin-bottom: 40px;
         }
 
         .title-section {
-            flex: 1;
+            flex-grow: 1;
+        }
+
+        .refresh-info {
+            flex-shrink: 0;
+            margin-left: 24px;
+            background: #1e293b;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: #94a3b8;
+            font-size: 18px;
+            border: 1px solid #334155;
         }
 
         h1 {
-            font-size: 1.875rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #f8fafc;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
         }
 
         .subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .meta-info {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            white-space: nowrap;
+            color: #94a3b8;
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            max-width: 600px;
         }
 
         .container {
-            background: var(--bg-secondary);
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            background: #1e293b;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-        }
-
-        .loading-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            color: var(--text-primary);
-        }
-
-        .error-message {
-            padding: 1rem;
-            background: #dc2626;
-            color: white;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-            display: none;
+            margin-top: 32px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.875rem;
+            font-size: 18px;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
         }
 
         th {
-            background: var(--bg-primary);
-            padding: 1rem;
-            text-align: left;
-            font-weight: 500;
-            color: var(--text-secondary);
-            border-bottom: 1px solid var(--border-color);
+            background: #0f172a;
+            font-weight: 600;
+            color: #e2e8f0;
             cursor: pointer;
             user-select: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 0.05em;
             position: relative;
         }
 
         th:hover {
-            color: var(--text-primary);
+            color: #fff;
+            background: #1e293b;
         }
 
-        th[aria-sort] {
-            padding-right: 2rem;
-        }
-
-        th[aria-sort]::after {
+        th::after {
             content: '';
             position: absolute;
-            right: 0.75rem;
+            right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            width: 0.75rem;
-            height: 0.75rem;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239ca3af'%3E%3Cpath d='M8 10l4-4 4 4M8 14l4 4 4-4'/%3E%3C/svg%3E");
+            width: 16px;
+            height: 16px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 15l5 5 5-5'/%3E%3Cpath d='M7 9l5-5 5 5'/%3E%3C/svg%3E");
             background-size: contain;
             opacity: 0.5;
+            transition: all 0.2s ease;
         }
 
-        th[aria-sort="ascending"]::after {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e5e7eb'%3E%3Cpath d='M8 14l4 4 4-4'/%3E%3C/svg%3E");
+        th.sorted-asc::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f8fafc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 15l5 5 5-5'/%3E%3C/svg%3E");
             opacity: 1;
         }
 
-        th[aria-sort="descending"]::after {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e5e7eb'%3E%3Cpath d='M8 10l4-4 4 4'/%3E%3C/svg%3E");
+        th.sorted-desc::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f8fafc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 9l5-5 5 5'/%3E%3C/svg%3E");
             opacity: 1;
         }
 
-        td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
+        th:hover::after {
+            opacity: 0.8;
         }
 
         tr:hover {
-            background: var(--hover-bg);
+            background: #334155;
         }
 
         .network-cell {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 12px;
+            font-weight: 600;
+        }
+
+        .timestamp-cell, .version-cell, .size-cell {
+            color: #cbd5e1;
+            font-weight: 500;
+            font-size: 17px; /* Consistent font size */
+        }
+
+        .download-link {
+            color: #f8fafc;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: #3b82f6;
+            transition: all 0.2s ease;
             font-weight: 500;
         }
 
-        .timestamp-cell {
-            color: var(--text-secondary);
-            font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-        }
-
-        .version-cell, .size-cell {
-            color: var(--text-secondary);
-        }
-
-        .download-button {
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            background: var(--button-bg);
-            border: none;
-            cursor: pointer;
-            font-size: 0.875rem;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .download-button:hover {
-            background: var(--button-hover);
-        }
-
-        .download-button:focus {
-            outline: 2px solid var(--text-primary);
-            outline-offset: 2px;
+        .download-link:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
         }
 
         .badge {
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.375rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            background: var(--button-bg);
-            color: var(--text-primary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            background: #475569;
+            color: #f8fafc;
+            letter-spacing: 0.025em;
         }
 
-        .meta-info {
-            margin-bottom: 1.25rem;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #1e293b;
+            border-radius: 8px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 16px;
         }
 
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
 
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-                margin: 0;
-            }
-
-            .container {
-                border-radius: 0;
-            }
-
-            td, th {
-                padding: 0.75rem;
-            }
-
-            .size-cell {
-                display: none;
-            }
-
-            th:nth-child(4),
-            td:nth-child(4) {
-                display: none;
-            }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="title-section">
-            <h1>Sidecar Snapshots</h1>
-            <p class="subtitle">Quickly start your sync from a recent block with a snapshot</p>
+        <div class="header-content">
+            <div class="title-section">
+                <h1>Sidecar Snapshots</h1>
+                <p class="subtitle">Quickly Start Your Sync from a Recent Block with a Snapshot</p>
+            </div>
+            <div class="refresh-info" id="refresh-info">
+                <!-- Last Refreshed time will be populated here -->
+            </div>
         </div>
-        <div class="meta-info" id="meta-info" aria-live="polite"></div>
     </div>
-    <div class="error-message" id="error-message" role="alert"></div>
-    <div class="container" style="position: relative;">
-        <div id="loading" class="loading-overlay">Loading snapshots...</div>
-        <table role="grid">
+    <div class="container">
+        <table>
             <thead>
                 <tr>
-                    <th scope="col" role="columnheader" aria-sort="none" onclick="handleSort('network')">Network</th>
-                    <th scope="col" role="columnheader" aria-sort="descending" onclick="handleSort('timestamp')">Timestamp</th>
-                    <th scope="col" role="columnheader" aria-sort="none" onclick="handleSort('version')">Version</th>
-                    <th scope="col" role="columnheader" aria-sort="none" onclick="handleSort('size')">Size</th>
-                    <th scope="col" role="columnheader">Action</th>
+                    <th onclick="sortTable('network')">Network</th>
+                    <th onclick="sortTable('timestamp')">Timestamp (UTC)</th>
+                    <th onclick="sortTable('version')">Version</th>
+                    <th onclick="sortTable('size')">Size</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody id="files"></tbody>
@@ -270,156 +209,133 @@
     </div>
 
     <script>
-        class SnapshotManager {
-            constructor() {
-                this.currentSort = {
-                    column: 'timestamp',
-                    direction: 'desc'
-                };
-                this.data = null;
-                this.init();
-            }
+        let currentSort = {
+            column: 'version',
+            direction: 'desc'
+        };
 
-            async init() {
-                try {
-                    await this.fetchData();
-                    this.setupEventListeners();
-                } catch (error) {
-                    this.handleError(error);
-                }
-            }
-
-            async fetchData() {
-                try {
-                    const response = await fetch('snapshot_data.json');
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    this.data = await response.json();
-                    this.updateMetaInfo();
-                    this.renderTable();
-                } catch (error) {
-                    throw new Error('Failed to fetch snapshot data. Please try again later.');
-                } finally {
-                    document.getElementById('loading').style.display = 'none';
-                }
-            }
-
-            updateMetaInfo() {
-                const metaInfo = document.getElementById('meta-info');
-                const date = new Date(this.data.meta.lastRefreshed);
-                const utcString = date.toUTCString();
-                metaInfo.innerHTML = `Refreshed last: ${utcString}`;
-            }
-
-            handleError(error) {
-                const errorElement = document.getElementById('error-message');
-                errorElement.textContent = error.message;
-                errorElement.style.display = 'block';
-                document.getElementById('loading').style.display = 'none';
-            }
-
-            setupEventListeners() {
-                window.handleSort = (column) => this.handleSort(column);
-                window.handleDownload = (network, version) => this.handleDownload(network, version);
-            }
-
-            handleSort(column) {
-                const headers = document.querySelectorAll('th[aria-sort]');
-                headers.forEach(header => {
-                    if (header.textContent.toLowerCase().includes(column)) {
-                        const currentSort = header.getAttribute('aria-sort');
-                        const newSort = currentSort === 'ascending' ? 'descending' : 'ascending';
-                        header.setAttribute('aria-sort', newSort);
-                        this.currentSort.direction = newSort === 'ascending' ? 'asc' : 'desc';
-                    } else {
-                        header.setAttribute('aria-sort', 'none');
-                    }
-                });
-
-                this.currentSort.column = column;
-                this.renderTable();
-            }
-
-            handleDownload(network, version) {
-                // Implement actual download logic here
-                console.log(`Downloading ${network} version ${version}`);
-            }
-
-            parseSize(size) {
-                const [value, unit] = size.split(' ');
-                return parseFloat(value) * (unit === 'GB' ? 1024 : 1);
-            }
-
-            formatDate(timestamp) {
-                const date = new Date(timestamp);
-                return new Intl.DateTimeFormat('default', {
+        fetch('snapshot_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const refreshInfo = document.getElementById('refresh-info');
+                const lastRefreshed = new Date(data.meta.lastRefreshed).toLocaleString('en-US', {
                     year: 'numeric',
                     month: 'short',
-                    day: '2-digit',
-                    hour: '2-digit',
+                    day: 'numeric',
+                    hour: 'numeric',
                     minute: '2-digit',
-                    second: '2-digit'
-                }).format(date);
-            }
-
-            sortData() {
-                return [...this.data.snapshots].sort((a, b) => {
-                    let valueA, valueB;
-
-                    switch (this.currentSort.column) {
-                        case 'size':
-                            valueA = this.parseSize(a.size);
-                            valueB = this.parseSize(b.size);
-                            break;
-                        case 'timestamp':
-                            valueA = new Date(a.timestamp);
-                            valueB = new Date(b.timestamp);
-                            break;
-                        default:
-                            valueA = a[this.currentSort.column];
-                            valueB = b[this.currentSort.column];
-                    }
-
-                    const sortOrder = this.currentSort.direction === 'asc' ? 1 : -1;
-                    return valueA < valueB ? -sortOrder : valueA > valueB ? sortOrder : 0;
+                    hour12: false,
+                    timeZone: 'UTC'
                 });
+                refreshInfo.innerHTML = `Last Refreshed: ${lastRefreshed} (UTC)`;
+
+                renderTable(data.snapshots);
+                sortTable(currentSort.column); // Initial sort
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+        function sortTable(column) {
+            const headers = document.querySelectorAll('th');
+            headers.forEach(header => {
+                header.classList.remove('sorted-asc', 'sorted-desc');
+            });
+
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'desc';
             }
 
-            renderTable() {
-                if (!this.data) return;
+            const header = document.querySelector(`th:nth-child(${getColumnIndex(column) + 1})`);
+            header.classList.add(`sorted-${currentSort.direction}`);
 
-                const fileList = document.getElementById('files');
-                const sortedFiles = this.sortData();
-                
-                fileList.innerHTML = sortedFiles.map(file => `
+            fetch('snapshot_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    let sortedFiles = [...data.snapshots].sort((a, b) => {
+                        let valueA, valueB;
+
+                        if (column === 'size') {
+                            valueA = parseSize(a.size);
+                            valueB = parseSize(b.size);
+                        } else {
+                            valueA = a[column];
+                            valueB = b[column];
+                        }
+
+                        if (column === 'timestamp') {
+                            valueA = new Date(valueA);
+                            valueB = new Date(valueB);
+                        }
+
+                        if (valueA < valueB) return currentSort.direction === 'asc' ? -1 : 1;
+                        if (valueA > valueB) return currentSort.direction === 'asc' ? 1 : -1;
+                        return 0;
+                    });
+
+                    renderTable(sortedFiles);
+                });
+        }
+
+        function getColumnIndex(column) {
+            const columns = ['network', 'timestamp', 'version', 'size', 'action'];
+            return columns.indexOf(column);
+        }
+
+        function parseSize(size) {
+            const [value, unit] = size.split(' ');
+            const sizeInBytes = parseFloat(value) * (unit === 'GB' ? 1024 : 1);
+            return sizeInBytes;
+        }
+
+        function renderTable(files) {
+            const fileList = document.getElementById('files');
+            fileList.innerHTML = '';
+            
+            files.forEach(file => {
+                const formattedTimestamp = formatTimestamp(file.timestamp);
+                fileList.innerHTML += `
                     <tr>
                         <td>
                             <div class="network-cell">
                                 <span class="badge">${file.network}</span>
                             </div>
                         </td>
-                        <td class="timestamp-cell">${this.formatDate(file.timestamp)}</td>
+                        <td class="timestamp-cell">
+                            <div class="timestamp-wrapper">
+                                ${formattedTimestamp}
+                            </div>
+                        </td>
                         <td class="version-cell">${file.version}</td>
                         <td class="size-cell">${file.size}</td>
                         <td>
-                            <button 
-                                onclick="handleDownload('${file.network}', '${file.version}')"
-                                class="download-button"
-                                aria-label="Download ${file.network} version ${file.version}"
-                            >
+                            <a href="#" class="download-link" onclick="alert('Downloading ${file.network} ${file.version}')">
                                 Download
-                            </button>
+                            </a>
                         </td>
                     </tr>
-                `).join('');
-            }
+                `;
+            });
         }
 
-        // Initialize the application
-        document.addEventListener('DOMContentLoaded', () => {
-            new SnapshotManager();
-        });
+        function formatTimestamp(timestamp) {
+            const date = new Date(timestamp);
+            return date.toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: false,
+                timeZone: 'UTC'
+            });
+        }
     </script>
+
+    <div class="footer">
+        <p>For more information, visit the <a href="https://github.com/Layr-Labs/sidecar">Sidecar repository</a>.</p>
+        <p>This GitHub page is from <a href="https://github.com/BrendanCoughlan5/test-github-page">BrendanCoughlan5/test-github-page</a>.</p>
+    </div>
 </body>
 </html>
