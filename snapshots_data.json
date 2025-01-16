@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastRefreshed": "2025-01-16T05:28:27.837620+00:00",
+    "lastRefreshed": "2025-01-16T05:37:14.165468+00:00",
     "baseUrl": "https://files.bcog55.org"
   },
   "snapshots": [
@@ -8635,94 +8635,564 @@
       "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052825.dump"
     },
     {
-      "name": "snapshots/mainnet/ethereum/snapshot-v1.0.0-20250104T175654.dump",
-      "path": "/snapshots/mainnet/ethereum/snapshot-v1.0.0-20250104T175654.dump",
-      "environment": "mainnet",
-      "network": "ethereum",
-      "sidecar_version": "v1.0.0",
-      "date": "20250104T175654",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/mainnet/ethereum/snapshot-v1.0.0-20250104T175654.dump"
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052831.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052831.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052831",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052831.dump"
     },
     {
-      "name": "snapshots/preprod/holesky/snapshot-v1.0.0-20250104T093748.dump",
-      "path": "/snapshots/preprod/holesky/snapshot-v1.0.0-20250104T093748.dump",
-      "environment": "preprod",
-      "network": "holesky",
-      "sidecar_version": "v1.0.0",
-      "date": "20250104T093748",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/preprod/holesky/snapshot-v1.0.0-20250104T093748.dump"
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052837.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052837.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052837",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052837.dump"
     },
     {
-      "name": "snapshots/preprod/holesky/snapshot-v1.0.1-20250105T122858.dump",
-      "path": "/snapshots/preprod/holesky/snapshot-v1.0.1-20250105T122858.dump",
-      "environment": "preprod",
-      "network": "holesky",
-      "sidecar_version": "v1.0.1",
-      "date": "20250105T122858",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/preprod/holesky/snapshot-v1.0.1-20250105T122858.dump"
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052843.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052843.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052843",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052843.dump"
     },
     {
-      "name": "snapshots/preprod/holesky/snapshot-v1.0.1-20250105T174109.dump",
-      "path": "/snapshots/preprod/holesky/snapshot-v1.0.1-20250105T174109.dump",
-      "environment": "preprod",
-      "network": "holesky",
-      "sidecar_version": "v1.0.1",
-      "date": "20250105T174109",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/preprod/holesky/snapshot-v1.0.1-20250105T174109.dump"
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052850.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052850.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052850",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052850.dump"
     },
     {
-      "name": "snapshots/preprod/holesky/snapshot-v1.0.2-20250105T164202.dump",
-      "path": "/snapshots/preprod/holesky/snapshot-v1.0.2-20250105T164202.dump",
-      "environment": "preprod",
-      "network": "holesky",
-      "sidecar_version": "v1.0.2",
-      "date": "20250105T164202",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/preprod/holesky/snapshot-v1.0.2-20250105T164202.dump"
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052856.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052856.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052856",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052856.dump"
     },
     {
-      "name": "snapshots/preprod/holesky/snapshot-v1.0.2-20250108T005909.dump",
-      "path": "/snapshots/preprod/holesky/snapshot-v1.0.2-20250108T005909.dump",
-      "environment": "preprod",
-      "network": "holesky",
-      "sidecar_version": "v1.0.2",
-      "date": "20250108T005909",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/preprod/holesky/snapshot-v1.0.2-20250108T005909.dump"
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052903.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052903.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052903",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052903.dump"
     },
     {
-      "name": "snapshots/testnet/holesky/snapshot-v1.0.0-20250106T061127.dump",
-      "path": "/snapshots/testnet/holesky/snapshot-v1.0.0-20250106T061127.dump",
-      "environment": "testnet",
-      "network": "holesky",
-      "sidecar_version": "v1.0.0",
-      "date": "20250106T061127",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/testnet/holesky/snapshot-v1.0.0-20250106T061127.dump"
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052909.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052909.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052909",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052909.dump"
     },
     {
-      "name": "snapshots/testnet/holesky/snapshot-v1.0.0-20250107T042327.dump",
-      "path": "/snapshots/testnet/holesky/snapshot-v1.0.0-20250107T042327.dump",
-      "environment": "testnet",
-      "network": "holesky",
-      "sidecar_version": "v1.0.0",
-      "date": "20250107T042327",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/testnet/holesky/snapshot-v1.0.0-20250107T042327.dump"
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052915.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052915.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052915",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052915.dump"
     },
     {
-      "name": "snapshots/testnet/holesky/snapshot-v1.0.1-20250105T133659.dump",
-      "path": "/snapshots/testnet/holesky/snapshot-v1.0.1-20250105T133659.dump",
-      "environment": "testnet",
-      "network": "holesky",
-      "sidecar_version": "v1.0.1",
-      "date": "20250105T133659",
-      "size": 3072,
-      "download_link": "https://files.bcog55.org/snapshots/testnet/holesky/snapshot-v1.0.1-20250105T133659.dump"
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052921.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052921.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052921",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052921.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052927.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052927.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052927",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052927.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052933.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052933.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052933",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052933.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052940.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052940.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052940",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052940.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052946.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052946.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052946",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052946.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052952.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052952.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052952",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052952.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052959.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052959.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116052959",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116052959.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053005.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053005.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053005",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053005.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053011.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053011.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053011",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053011.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053018.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053018.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053018",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053018.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053024.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053024.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053024",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053024.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053030.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053030.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053030",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053030.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053036.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053036.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053036",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053036.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053042.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053042.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053042",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053042.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053049.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053049.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053049",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053049.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053055.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053055.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053055",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053055.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053101.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053101.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053101",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053101.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053108.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053108.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053108",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053108.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053114.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053114.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053114",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053114.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053121.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053121.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053121",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053121.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053127.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053127.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053127",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053127.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053133.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053133.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053133",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053133.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053139.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053139.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053139",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053139.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053145.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053145.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053145",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053145.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053151.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053151.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053151",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053151.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053157.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053157.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053157",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053157.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053204.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053204.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053204",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053204.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053210.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053210.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053210",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053210.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053216.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053216.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053216",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053216.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053222.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053222.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053222",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053222.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053228.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053228.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053228",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053228.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053234.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053234.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053234",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053234.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053241.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053241.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053241",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053241.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053247.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053247.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053247",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053247.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053253.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053253.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053253",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053253.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053259.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053259.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053259",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053259.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053306.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053306.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053306",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053306.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053313.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053313.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053313",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053313.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053319.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053319.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053319",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053319.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053325.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053325.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053325",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053325.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053332.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053332.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053332",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053332.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053338.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053338.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053338",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053338.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053344.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053344.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053344",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053344.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053350.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053350.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053350",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053350.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053357.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053357.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053357",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053357.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053403.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053403.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053403",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053403.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053409.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053409.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053409",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053409.dump"
+    },
+    {
+      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053415.dump",
+      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053415.dump",
+      "environment": "TEST_LOCAL_ENV",
+      "network": "TEST_LOCAL_NETWORK",
+      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
+      "date": "20250116053415",
+      "size": 1262,
+      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053415.dump"
     }
   ]
 }
