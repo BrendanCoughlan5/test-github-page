@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastRefreshed": "2025-01-16T15:44:36.168645+00:00",
+    "lastRefreshed": "2025-01-16T15:53:35.183600+00:00",
     "baseUrl": "https://files.bcog55.org"
   },
   "snapshots": [
@@ -9163,36 +9163,6 @@
       "date": "20250116053357",
       "size": 1262,
       "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053357.dump"
-    },
-    {
-      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053403.dump",
-      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053403.dump",
-      "environment": "TEST_LOCAL_ENV",
-      "network": "TEST_LOCAL_NETWORK",
-      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
-      "date": "20250116053403",
-      "size": 1262,
-      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053403.dump"
-    },
-    {
-      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053409.dump",
-      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053409.dump",
-      "environment": "TEST_LOCAL_ENV",
-      "network": "TEST_LOCAL_NETWORK",
-      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
-      "date": "20250116053409",
-      "size": 1262,
-      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053409.dump"
-    },
-    {
-      "name": "snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053415.dump",
-      "path": "/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053415.dump",
-      "environment": "TEST_LOCAL_ENV",
-      "network": "TEST_LOCAL_NETWORK",
-      "sidecar_version": "snapshot_TEST_LOCAL_ENV",
-      "date": "20250116053415",
-      "size": 1262,
-      "download_link": "https://files.bcog55.org/snapshots/TEST_LOCAL_ENV/TEST_LOCAL_NETWORK/sidecar-snapshot_TEST_LOCAL_ENV-20250116053415.dump"
     }
   ]
 }
