@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastRefreshed": "2025-01-28T00:41:02.586269+00:00",
+    "lastRefreshed": "2025-01-28T01:17:06.821973+00:00",
     "baseUrl": "https://files.bcog55.org"
   },
   "snapshots": [
@@ -5143,6 +5143,16 @@
       "date": "rc.1_sidecar_testnet_holesky_20250128000556",
       "size": 4294470732,
       "download_link": "https://files.bcog55.org/snapshots/TESTNET/HOLESKY/sidecar-snapshot_TESTNET_HOLESKY_v3.0.0-rc.1_sidecar_testnet_holesky_20250128000556.dump"
+    },
+    {
+      "name": "snapshots/TESTNET/HOLESKY/sidecar-snapshot_TESTNET_HOLESKY_v3.0.0-rc.1_sidecar_testnet_holesky_20250128003602.dump",
+      "path": "/snapshots/TESTNET/HOLESKY/sidecar-snapshot_TESTNET_HOLESKY_v3.0.0-rc.1_sidecar_testnet_holesky_20250128003602.dump",
+      "environment": "TESTNET",
+      "network": "HOLESKY",
+      "sidecar_version": "snapshot_TESTNET_HOLESKY_v3.0.0",
+      "date": "rc.1_sidecar_testnet_holesky_20250128003602",
+      "size": 4294494748,
+      "download_link": "https://files.bcog55.org/snapshots/TESTNET/HOLESKY/sidecar-snapshot_TESTNET_HOLESKY_v3.0.0-rc.1_sidecar_testnet_holesky_20250128003602.dump"
     }
   ]
 }
