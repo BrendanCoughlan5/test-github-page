@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastRefreshed": "2025-01-29T16:18:17.316991+00:00",
+    "lastRefreshed": "2025-01-29T16:32:08.849417+00:00",
     "baseUrl": "https://files.bcog55.org"
   },
   "snapshots": [
@@ -5253,6 +5253,26 @@
       "date": "ethereum_v2.0.0_public_20250129150544",
       "size": 5787097746,
       "download_link": "https://files.bcog55.org/snapshots/mainnet/ethereum/sidecar-snapshot_mainnet-ethereum_v2.0.0_public_20250129150544.dump"
+    },
+    {
+      "name": "snapshots/mainnet/ethereum/sidecar-snapshot_mainnet-ethereum_v2.0.0_public_20250129160545.dump.sha256sum",
+      "path": "/snapshots/mainnet/ethereum/sidecar-snapshot_mainnet-ethereum_v2.0.0_public_20250129160545.dump.sha256sum",
+      "environment": "mainnet",
+      "network": "ethereum",
+      "sidecar_version": "snapshot_mainnet",
+      "date": "ethereum_v2.0.0_public_20250129160545.sha256sum",
+      "size": 166,
+      "download_link": "https://files.bcog55.org/snapshots/mainnet/ethereum/sidecar-snapshot_mainnet-ethereum_v2.0.0_public_20250129160545.dump.sha256sum"
+    },
+    {
+      "name": "snapshots/mainnet/ethereum/sidecar-snapshot_mainnet-ethereum_v2.0.0_public_20250129160545.dump",
+      "path": "/snapshots/mainnet/ethereum/sidecar-snapshot_mainnet-ethereum_v2.0.0_public_20250129160545.dump",
+      "environment": "mainnet",
+      "network": "ethereum",
+      "sidecar_version": "snapshot_mainnet",
+      "date": "ethereum_v2.0.0_public_20250129160545",
+      "size": 5787150030,
+      "download_link": "https://files.bcog55.org/snapshots/mainnet/ethereum/sidecar-snapshot_mainnet-ethereum_v2.0.0_public_20250129160545.dump"
     }
   ]
 }
